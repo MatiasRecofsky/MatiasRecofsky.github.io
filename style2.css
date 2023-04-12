@@ -1,0 +1,65 @@
+/* Estilos para el encabezado h2 */
+h2 {
+    font-size: 32px;
+    margin-bottom: 24px;
+    color: #333;
+    text-align: center;
+}
+
+/* Estilos para los formularios */
+form {
+    margin-bottom: 32px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: bold;
+}
+
+input[type="number"] {
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 2px solid #007bff;
+    width: 100%;
+    margin-bottom: 16px;
+    background-color: #f8f9fa;
+    color: #333;
+    transition: border-bottom-color 0.3s ease;
+}
+
+input[type="number"]:focus {
+    border-bottom-color: #0056b3;
+    outline: none;
+}
+
+button[type="submit"] {
+    padding: 12px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para los resultados */
+#resultado1,
+#resultado2,
+#resultado3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 16px;
+    color: #333;
+    text-align: center;
+}

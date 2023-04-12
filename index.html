@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style2.css">
+    <title>Calculadora de Precio Total</title>
+    <script>
+        function calcularPrecioTotal1() {
+            // Obtener los valores de los inputs
+            var lado1 = parseFloat(document.getElementById('lado1').value);
+            var lado2 = parseFloat(document.getElementById('lado2').value);
+            var precioCamara = parseFloat(document.getElementById('precioCamara').value);
+
+            // Calcular el precio total
+            var resultado = (lado1 + lado2) * 2 * precioCamara;
+
+            // Mostrar el resultado en el elemento de salida
+            document.getElementById('resultado1').innerHTML = 'Precio Total: $' + resultado;
+        }
+
+        function calcularPrecioTotal2() {
+            // Obtener los valores de los inputs
+            var ladoVidrio1 = parseFloat(document.getElementById('ladoVidrio1').value);
+            var ladoVidrio2 = parseFloat(document.getElementById('ladoVidrio2').value);
+            var precioVidrio = parseFloat(document.getElementById('precioVidrio').value);
+
+            // Calcular el precio total
+            var resultado = ladoVidrio1 * ladoVidrio2 * precioVidrio * 2;
+
+            // Mostrar el resultado en el elemento de salida
+            document.getElementById('resultado2').innerHTML = 'Precio Total: $' + resultado;
+        }
+    </script>
+</head>
+<body>
+    <h1>Calculadora de Precio Total</h1>
+    <h2>Calculadora 1</h2>
+    <form onsubmit="event.preventDefault(); calcularPrecioTotal1();">
+        <label for="lado1">Lado 1:</label>
+        <input type="number" id="lado1" step="0.01" required><br>
+        <label for="lado2">Lado 2:</label>
+        <input type="number" id="lado2" step="0.01" required><br>
+        <label for="precioCamara">Precio de Cámara por Metro:</label>
+        <input type="number" id="precioCamara" step="0.01" required><br>
+        <button type="submit">Calcular</button>
+    </form>
+    <div id="resultado1"></div>
+
+    <h2>Calculadora 2</h2>
+    <form onsubmit="event.preventDefault(); calcularPrecioTotal2();">
+        <label for="ladoVidrio1">Lado Vidrio 1:</label>
+        <input type="number" id="ladoVidrio1" step="0.01" required><br>
+        <label for="ladoVidrio2">Lado Vidrio 2:</label>
+        <input type="number" id="ladoVidrio2" step="0.01" required><br>
+        <label for="precioVidrio">Precio de Vidrio:</label>
+        <input type="number" id="precioVidrio" step="0.01" required><br>
+        <button type="submit">Calcular</button>
+    </form>
+    <div id="resultado2"></div>
+    
+    <script>
+        function calcularPrecioTotal2() {
+            // Obtener los valores de los inputs
+            var ladoVidrio1 = parseFloat(document.getElementById('ladoVidrio1').value);
+            var ladoVidrio2 = parseFloat(document.getElementById('ladoVidrio2').value);
+            var precioVidrio = parseFloat(document.getElementById('precioVidrio').value);
+    
+            // Calcular el precio total
+            var resultado = ladoVidrio1 * ladoVidrio2 * precioVidrio * 2;
+    
+            // Mostrar el resultado en el elemento de salida
+            document.getElementById('resultado2').innerHTML = 'Precio Total: $' + resultado;
+        }
+    </script>
+<h2>Calculadora 3</h2>
+<form onsubmit="event.preventDefault(); calcularResultadoFinal();">
+    <label for="numero1">Número 1:</label>
+    <input type="number" id="numero1" step="0.01" required><br>
+    <label for="numero2">Número 2:</label>
+    <input type="number" id="numero2" step="0.01" required><br>
+    <label for="porcentaje">Porcentaje a sumar (%):</label>
+    <input type="number" id="porcentaje" step="0.01" required><br>
+    <button type="submit">Calcular</button>
+</form>
+<div id="resultado3"></div>
+
+<script>
+    function calcularResultadoFinal() {
+        // Obtener los valores de los inputs
+        var numero1 = parseFloat(document.getElementById('numero1').value);
+        var numero2 = parseFloat(document.getElementById('numero2').value);
+        var porcentaje = parseFloat(document.getElementById('porcentaje').value);
+
+        // Validar que los valores ingresados sean numéricos
+        if (isNaN(numero1) || isNaN(numero2) || isNaN(porcentaje)) {
+            document.getElementById('resultado3').innerHTML = 'Por favor, ingrese números válidos.';
+            return;
+        }
+
+        // Calcular la suma de numero1 y numero2
+        var suma = numero1 + numero2;
+
+        // Calcular el incremento porcentual basado en el porcentaje ingresado
+        var incremento = suma * (porcentaje / 100);
+
+        // Calcular el resultado final
+        var resultadoFinal = suma + incremento;
+
+        // Mostrar el resultado en el elemento de salida
+        document.getElementById('resultado3').innerHTML = 'Resultado Final: ' + resultadoFinal.toFixed(2);
+    }
+</script>
